@@ -25,11 +25,9 @@
                 </div>
             </div>
             <div class="side-imgs" >
-                <img :src="'img/' + objSlide.image" alt="" class="img-side" v-for="(objSlide, i) in arrImages" :class="i === activeIndex ? 'focused' : ''">
-                <div class="controls">
-                    <div class="btn-up hidden" @click="decreaseActiveIndex()"><i class="fa-solid fa-chevron-up"></i></div>
-                    <div class="btn-down" @click="increaseActiveIndex()"><i class="fa-solid fa-chevron-down"></i></div>
-                </div>
+                <img :src="'img/' + objSlide.image" alt="" class="img-side" v-for="(objSlide, i) in arrImages" :class="i === activeIndex ? 'focused' : ''" @click="selectActiveIndex()" >
+                <div class="btn-up" @click="decreaseActiveIndex()"><i class="fa-solid fa-chevron-up"></i></div>
+                <div class="btn-down" @click="increaseActiveIndex()"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
         </div>
     </div>

@@ -49,25 +49,28 @@
 	height: 20%;
 }
 
-.controls {
-	display: flex;
-    flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	position: absolute;
-	inset: 0;
-	z-index: 10;
-}
-
 .btn-up, .btn-down {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    right: 20px;
 	margin: 1rem;
 	width: 2rem;
 	height: 2rem;
 	border-radius: 100%;
 	background-color: white;
+}
+
+.btn-up{
+    position: absolute;
+    right: 50px;
+    top: 0px;
+}
+
+.btn-down{
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
 }
 
 .btn-up:hover, .btn-down:hover {
