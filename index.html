@@ -7,11 +7,31 @@
     <title>Vue Slider</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 
 </head>
 <body>
-    
+    <div id="root">
+        <div class="container">
+            <div class="slider">
+                <div class="img-container"  v-for="(objSlide, i) in arrImages" :class="i === activeIndex ? 'active' : ''">
+                    <img :src="'img/' + objSlide.image" alt="" class="slider-img" >
+                    <div class="text">
+                        <h2>{{ objSlide.title }}</h2>
+                        <p>{{ objSlide.text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="side-imgs" >
+                <img :src="'img/' + objSlide.image" alt="" class="img-side" v-for="(objSlide, i) in arrImages" :class="i === activeIndex ? 'focused' : ''">
+                <div class="controls">
+                    <div class="btn-up hidden" @click="decreaseActiveIndex()"><i class="fa-solid fa-chevron-up"></i></div>
+                    <div class="btn-down" @click="increaseActiveIndex()"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
